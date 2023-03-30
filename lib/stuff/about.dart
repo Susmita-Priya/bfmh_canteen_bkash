@@ -6,6 +6,7 @@
 import 'package:bfmh_canteen/screen/bottom_nav_pages/MDrawer.dart';
 import 'package:bfmh_canteen/stuff/Mydrawer.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 //import 'package:nb_utils/nb_utils.dart';
 //import 'package:gradient_app_bar/gradient_app_bar.dart';
@@ -49,8 +50,8 @@ class _aboutState extends State<about> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "BFMH Canteen",
+        title: Text(
+          'app_name'.tr,
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.orange,
@@ -109,24 +110,25 @@ class _aboutState extends State<about> with TickerProviderStateMixin {
             child: Container(
               margin: EdgeInsets.all(15),
               child: RichText(
-                text: const TextSpan(
-                  text: '\n \n \n \nAbout Our App',
+                text: TextSpan(
+                  text: '\n \n \n \n' + 'about'.tr,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
                       color: Color(0xFFFD8803)),
                   children: <TextSpan>[
                     TextSpan(
+                        children: [],
                         text:
-                            '\n  \n Our hall Bangmata Fazilatunessa Mujib Hall of Jagannath University ,there have canteen system food buying.When we go and purches food there are too many crowd and it wastes our important time.It creates awkward situation.\n \n This BFMH Apss releases us from this problem.We can save our time. We can purches food in this apps.And we can take our food when it prepared and get notifications.And donot need to stand in queue for taking food.',
+                            '\n  \n In Jagannath University ,there are a canteen for food buying among students. When we go and purches food there are too many crowd and it wastes our important time.It creates awkward situation.\n \n This BFMH Apss releases us from this problem.We can save our time. We can purches food in this apps.And we can take our food when it prepared and get notifications.And donot need to stand in queue for taking food.',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
                             color: Color(0xFF080808))),
-                    TextSpan(text: "\n \nContact with us"),
+                    TextSpan(text: "\n \n" + 'contact'.tr),
                     TextSpan(
                         text:
-                            "\n \n Susmita Saha(Priya) \n Email : b180305047@cse.jnu.ac.bd \n \n Laboni akter \n Email: labonicsejnu@gmail.com",
+                            "\n \n Susmita Saha(Priya) \n Email : b180305047@cse.jnu.ac.bd \n \n Tanvir Ahammed Hridoy \n Email: hmhridoy65@gmail.com",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
@@ -145,7 +147,7 @@ class _aboutState extends State<about> with TickerProviderStateMixin {
             icon: SizedBox(),
           ),
           BottomNavigationBarItem(
-            label: " © Susmita Saha(Priya) ",
+            label: "  ",
             icon: SizedBox(),
           )
         ],

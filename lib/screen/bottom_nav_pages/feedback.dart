@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class FeedBack extends StatefulWidget {
   const FeedBack({super.key});
@@ -80,7 +81,7 @@ class _FeedbackState extends State<FeedBack> {
                   height: 20.h,
                 ),
                 Text(
-                  "Submit Your Feedback",
+                  'feedtitle'.tr,
                   style: TextStyle(
                       fontSize: 25.sp,
                       color: Colors.orange,
@@ -90,7 +91,7 @@ class _FeedbackState extends State<FeedBack> {
                   height: 5.h,
                 ),
                 Text(
-                  "Your feedback help us for imporving",
+                  'feedsubt'.tr,
                   style: TextStyle(
                     fontSize: 14.sp,
                     //color: Color(0xFFBBBBBB),
@@ -110,7 +111,7 @@ class _FeedbackState extends State<FeedBack> {
                     //     borderRadius: BorderRadius.circular(8)),
                     icon: Icon(Icons.fastfood),
                     iconColor: Colors.orange,
-                    labelText: 'Item Name',
+                    labelText: 'itemname'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -135,7 +136,7 @@ class _FeedbackState extends State<FeedBack> {
                   decoration: InputDecoration(
                     icon: Icon(Icons.feedback),
                     iconColor: Colors.orange,
-                    labelText: 'Feedback',
+                    labelText: 'feedback'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -153,7 +154,7 @@ class _FeedbackState extends State<FeedBack> {
                 ),
 
                 // elevated button
-                customButton("Continue", () => sendUserDataToDB()),
+                customButton('continue'.tr, () => sendUserDataToDB()),
                 // ListTile(
                 //   // leading: const Icon(
                 //   //   CupertinoIcons.archivebox_fill,

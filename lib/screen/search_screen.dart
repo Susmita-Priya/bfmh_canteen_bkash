@@ -2,6 +2,7 @@ import 'package:bfmh_canteen/screen/product_details_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -24,7 +25,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search),
                   contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                  hintText: "You can search items",
+                  hintText: 'search'.tr,
                 ),
                 onChanged: (val) {
                   setState(() {

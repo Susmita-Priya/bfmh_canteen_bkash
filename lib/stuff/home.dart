@@ -9,6 +9,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -70,7 +71,7 @@ class _homeState extends State<home> {
         backgroundColor: Colors.orange,
         elevation: 0,
         title: Text(
-          "BFMH",
+          'app_name'.tr,
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -130,7 +131,7 @@ class _homeState extends State<home> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Food Items',
+                      'fooditem'.tr,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.orange,

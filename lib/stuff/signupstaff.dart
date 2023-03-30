@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class signupstaff extends StatefulWidget {
   const signupstaff({super.key});
@@ -84,7 +85,7 @@ class _signupstaffState extends State<signupstaff> {
                       ),
                     ),
                     Text(
-                      "Sign Up",
+                      'signup'.tr,
                       style: TextStyle(fontSize: 22.sp, color: Colors.white),
                     ),
                   ],
@@ -112,7 +113,7 @@ class _signupstaffState extends State<signupstaff> {
                           height: 20.h,
                         ),
                         Text(
-                          "Create an account",
+                          'create'.tr,
                           style: TextStyle(
                               fontSize: 22.sp, color: Appcolours.Orange),
                         ),
@@ -154,7 +155,7 @@ class _signupstaffState extends State<signupstaff> {
                                     fontSize: 14.sp,
                                     color: Colors.grey,
                                   ),
-                                  labelText: 'EMAIL',
+                                  labelText: 'Email'.tr,
                                   labelStyle: TextStyle(
                                     fontSize: 15.sp,
                                     color: Appcolours.Orange,
@@ -191,12 +192,12 @@ class _signupstaffState extends State<signupstaff> {
                                 controller: _passwordController,
                                 obscureText: _obscureText,
                                 decoration: InputDecoration(
-                                  hintText: "Enter Token",
+                                  hintText: "Collect Token from author",
                                   hintStyle: TextStyle(
                                     fontSize: 14.sp,
                                     color: Colors.grey,
                                   ),
-                                  labelText: 'Token',
+                                  labelText: 'token'.tr,
                                   labelStyle: TextStyle(
                                     fontSize: 15.sp,
                                     color: Appcolours.Orange,
@@ -240,7 +241,7 @@ class _signupstaffState extends State<signupstaff> {
                               signUp();
                             },
                             child: Text(
-                              "Sign Up",
+                              'signup'.tr,
                               style: TextStyle(
                                   color: Colors.white, fontSize: 18.sp),
                             ),
@@ -256,7 +257,7 @@ class _signupstaffState extends State<signupstaff> {
                         Wrap(
                           children: [
                             Text(
-                              "Already an account?",
+                              'already'.tr,
                               style: TextStyle(
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w600,
@@ -265,7 +266,7 @@ class _signupstaffState extends State<signupstaff> {
                             ),
                             GestureDetector(
                               child: Text(
-                                " Sign In",
+                                'signin'.tr,
                                 style: TextStyle(
                                   fontSize: 13.sp,
                                   fontWeight: FontWeight.w600,

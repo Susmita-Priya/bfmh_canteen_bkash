@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class editfood extends StatefulWidget {
   const editfood({super.key});
@@ -132,8 +133,8 @@ class _editfoodState extends State<editfood> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.orange,
-          title: const Text(
-            "Food list",
+          title: Text(
+            'foodlist'.tr,
           ),
           // automaticallyImplyLeading: false,
           //centerTitle: true,

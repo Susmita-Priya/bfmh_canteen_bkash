@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class traces extends StatefulWidget {
   const traces({super.key});
@@ -48,7 +49,7 @@ class _tracesState extends State<traces> {
                         //fit: BoxFit.cover,
 
                         title: Text(
-                          "Order ID: ${_documentSnapshot['order_id']}",
+                          'orderid'.tr + " : ${_documentSnapshot['order_id']}",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.orange,
@@ -90,8 +91,8 @@ class _tracesState extends State<traces> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "My Order Queue",
+        title: Text(
+          'que'.tr,
           style: TextStyle(
             //fontSize: 35,
             fontWeight: FontWeight.bold,

@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class feedback extends StatefulWidget {
   const feedback({super.key});
@@ -83,8 +84,8 @@ class _feedbackState extends State<feedback> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Feedbacks",
+        title: Text(
+          'feedlst'.tr,
           style: TextStyle(
             //fontSize: 35,
             fontWeight: FontWeight.bold,

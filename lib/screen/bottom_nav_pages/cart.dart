@@ -17,6 +17,7 @@ import 'dart:developer' as dev;
 //import 'package:example/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bkash/flutter_bkash.dart';
+import 'package:get/get.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -41,8 +42,8 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text(
-            "My Cart",
+          title: Text(
+            'mycart'.tr,
             style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -74,13 +75,13 @@ class _CartState extends State<Cart> {
                     borderRadius: BorderRadius.circular(35.0),
                   ),
                   backgroundColor: Colors.orange),
-              child: const Text(
-                "Checkout",
+              child: Text(
+                'checkout'.tr,
                 style: TextStyle(color: Colors.black),
               ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => bkash(total: total)));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => bkash()));
               },
               // String amount = _amountController.text.trim();
               // String amount = total.toString();
@@ -193,77 +194,77 @@ class _CartState extends State<Cart> {
             )));
   }
 
-  Amount() async {
-    QuerySnapshot qn = await FirebaseFirestore.instance
-        .collection("users-cart-items")
-        .doc(FirebaseAuth.instance.currentUser!.email)
-        .collection("items")
-        .get();
-    setState(() {
-      if (total != null) {
-        for (int i = 0; i < qn.docs.length; i++) {
-          total = (total! + qn.docs[i]["price"]);
-          product.add(qn.docs[i]["name"]);
-        }
-        print(total.toString());
-        item = product.join(",");
-      } else {}
-    });
-    print(item);
-    return total.toString();
-  }
+  // Amount() async {
+  //   QuerySnapshot qn = await FirebaseFirestore.instance
+  //       .collection("users-cart-items")
+  //       .doc(FirebaseAuth.instance.currentUser!.email)
+  //       .collection("items")
+  //       .get();
+  //   setState(() {
+  //     if (total != null) {
+  //       for (int i = 0; i < qn.docs.length; i++) {
+  //         total = (total! + qn.docs[i]["price"]);
+  //         product.add(qn.docs[i]["name"]);
+  //       }
+  //       print(total.toString());
+  //       item = product.join(",");
+  //     } else {}
+  //   });
+  //   print(item);
+  //   return total.toString();
+  // }
 
-  deletee() async {
-    total = null;
-    FirebaseFirestore.instance
-        .collection("users-cart-items")
-        .doc(FirebaseAuth.instance.currentUser!.email)
-        .collection("items")
-        .get()
-        .then((QuerySnapshot querySnapshot) {
-      querySnapshot.docs.forEach((doc) {
-        doc.reference.delete();
-      });
-    });
-    // .doc()
-    // .delete()
-    // .then((value) => {});
-  }
+  // deletee() async {
+  //   total = null;
+  //   FirebaseFirestore.instance
+  //       .collection("users-cart-items")
+  //       .doc(FirebaseAuth.instance.currentUser!.email)
+  //       .collection("items")
+  //       .get()
+  //       .then((QuerySnapshot querySnapshot) {
+  //     querySnapshot.docs.forEach((doc) {
+  //       doc.reference.delete();
+  //     });
+  //   });
+  //   // .doc()
+  //   // .delete()
+  //   // .then((value) => {});
+  // }
 
-  sendUserDataToDB() async {
-    final FirebaseAuth _auth = FirebaseAuth.instance;
-    var currentUser = _auth.currentUser;
-    String? email = FirebaseAuth.instance.currentUser!.email;
-    int random =
-        Random(DateTime.now().millisecondsSinceEpoch).nextInt(900000) + 1;
-    CollectionReference _collectionRef =
-        FirebaseFirestore.instance.collection("order");
-    return _collectionRef
-        .doc()
-        .set({
-          "order_id": random,
-          "item_name": item,
-          "total": total,
-          "email": email,
-        })
-        .then((value) => {
-              // Fluttertoast.showToast(msg: "Thanks For Your Feedback"),
-              qrr = "Email : $email" +
-                  "\n" +
-                  "Item : $item" +
-                  "\nTotal : " +
-                  total.toString(),
-              // Navigator.push(context, MaterialPageRoute(builder: (_) => qr())),
-              // print(qrr),
-              qr(),
-              deletee(),
-            })
-        .catchError((error) => print("something is wrong. $error"));
-  }
+  // sendUserDataToDB() async {
+  //   final FirebaseAuth _auth = FirebaseAuth.instance;
+  //   var currentUser = _auth.currentUser;
+  //   String? email = FirebaseAuth.instance.currentUser!.email;
+  //   int random =
+  //       Random(DateTime.now().millisecondsSinceEpoch).nextInt(900000) + 1;
+  //   CollectionReference _collectionRef =
+  //       FirebaseFirestore.instance.collection("order");
+  //   return _collectionRef
+  //       .doc()
+  //       .set({
+  //         "order_id": random,
+  //         "item_name": item,
+  //         "total": total,
+  //         "email": email,
+  //       })
+  //       .then((value) => {
+  //             // Fluttertoast.showToast(msg: "Thanks For Your Feedback"),
+  //             qrr = "Email : $email" +
+  //                 "\n" +
+  //                 "Item : $item" +
+  //                 "\nTotal : " +
+  //                 total.toString(),
+  //             // Navigator.push(context, MaterialPageRoute(builder: (_) => qr())),
+  //             // print(qrr),
+  //             qr(),
+  //             deletee(),
+  //           })
+  //       .catchError((error) => print("something is wrong. $error"));
+  // }
 
-  calculateAmount(String amount) {
-    final calculatedAmout = (int.parse(amount)) * 100;
-    //return Amount();
-    return calculatedAmout.toString();
-  }
+  // calculateAmount(String amount) {
+  //   final calculatedAmout = (int.parse(amount)) * 100;
+  //   //return Amount();
+  //   return calculatedAmout.toString();
+  // }
 }

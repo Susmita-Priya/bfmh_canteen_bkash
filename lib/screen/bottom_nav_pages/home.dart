@@ -7,6 +7,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -119,11 +120,11 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Food Items',
+                      'fooditem'.tr,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.orange,
-                          fontSize: 18.0),
+                          fontSize: 20.0),
                     ),
                     // GestureDetector(
                     //   // onTap: () {

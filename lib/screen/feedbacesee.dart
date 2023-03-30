@@ -1,5 +1,6 @@
 import 'package:bfmh_canteen/widgets/fetchfeedback.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FeedBackSee extends StatefulWidget {
   const FeedBackSee({super.key});
@@ -13,8 +14,8 @@ class _FeedBackSeeState extends State<FeedBackSee> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "My Feedbacks",
+        title: Text(
+          'feedlist'.tr,
           style: TextStyle(
             //fontSize: 35,
             fontWeight: FontWeight.bold,

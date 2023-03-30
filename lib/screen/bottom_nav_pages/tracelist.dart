@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class tracelist extends StatefulWidget {
   const tracelist({super.key});
@@ -58,14 +59,16 @@ class _tracelistState extends State<tracelist> {
 
                             title: Text(
                               //  "Order $n",
-                              "Order id: ${_documentSnapshot['order_id']}",
+                              'orderid'.tr +
+                                  " : ${_documentSnapshot['order_id']}",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.orange,
                                   fontSize: 19.h),
                             ),
                             subtitle: Text(
-                              "${_documentSnapshot['status']}",
+                              "${_documentSnapshot['item']}" +
+                                  "\nStatus: ${_documentSnapshot['status']}",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black),
@@ -127,8 +130,8 @@ class _tracelistState extends State<tracelist> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "My Orders",
+        title: Text(
+          'myorder'.tr,
           style: TextStyle(
               fontSize: 35,
               fontWeight: FontWeight.bold,

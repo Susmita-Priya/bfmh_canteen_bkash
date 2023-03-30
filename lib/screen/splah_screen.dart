@@ -36,7 +36,7 @@ class _SplahScreenState extends State<SplahScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "BFMH Canteen",
+                "JnU Canteen",
                 style: GoogleFonts.lobster(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

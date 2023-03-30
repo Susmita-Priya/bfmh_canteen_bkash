@@ -13,6 +13,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MDrawer extends StatefulWidget {
   const MDrawer({super.key});
@@ -71,7 +72,7 @@ class _MDrawerState extends State<MDrawer> {
                   );
                 },
                 child: Text(
-                  "Home",
+                  'home'.tr,
                   textScaleFactor: 1.2,
                   style: TextStyle(
                     color: Colors.black,
@@ -95,7 +96,7 @@ class _MDrawerState extends State<MDrawer> {
                   );
                 },
                 child: Text(
-                  "Profile",
+                  'profile'.tr,
                   textScaleFactor: 1.2,
                   style: TextStyle(
                     color: Colors.black,
@@ -119,7 +120,31 @@ class _MDrawerState extends State<MDrawer> {
                   );
                 },
                 child: Text(
-                  "My Orders Queue",
+                  'que'.tr,
+                  textScaleFactor: 1.2,
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            Divider(indent: 15, endIndent: 15),
+            ListTile(
+              leading: Icon(
+                Icons.add_reaction_rounded,
+                color: Colors.black,
+              ),
+              title: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FeedBack(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'feedback'.tr,
                   textScaleFactor: 1.2,
                   style: TextStyle(
                     color: Colors.black,
@@ -138,36 +163,12 @@ class _MDrawerState extends State<MDrawer> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const FeedBack(),
-                    ),
-                  );
-                },
-                child: Text(
-                  "FeedBack",
-                  textScaleFactor: 1.2,
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ),
-            Divider(indent: 15, endIndent: 15),
-            ListTile(
-              leading: Icon(
-                CupertinoIcons.list_number,
-                color: Colors.black,
-              ),
-              title: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
                       builder: (context) => const FeedBackSee(),
                     ),
                   );
                 },
                 child: Text(
-                  "FeedBack List",
+                  'feedlist'.tr,
                   textScaleFactor: 1.2,
                   style: TextStyle(
                     color: Colors.black,
@@ -191,7 +192,7 @@ class _MDrawerState extends State<MDrawer> {
                   );
                 },
                 child: Text(
-                  "About Us",
+                  'aboutt'.tr,
                   textScaleFactor: 1.2,
                   style: TextStyle(
                     color: Colors.black,
@@ -201,7 +202,7 @@ class _MDrawerState extends State<MDrawer> {
             ),
             Divider(indent: 16, endIndent: 16),
             SizedBox(
-              height: 220,
+              height: 165,
             ),
             ListTile(
               // leading: const Icon(
@@ -215,8 +216,8 @@ class _MDrawerState extends State<MDrawer> {
                     logout(context);
                   },
                   padding: EdgeInsets.all(20),
-                  child: const Text(
-                    "Logout",
+                  child: Text(
+                    'logout'.tr,
 
                     //textAlign: TextAlign.center,
                     style: TextStyle(

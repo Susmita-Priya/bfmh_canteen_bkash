@@ -12,6 +12,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class addproduct extends StatefulWidget {
@@ -104,7 +105,7 @@ class _addproductState extends State<addproduct> {
                   height: 20.h,
                 ),
                 Text(
-                  "Add food item",
+                  'adtitle'.tr,
                   style: TextStyle(
                       fontSize: 25.sp,
                       color: Colors.orange,
@@ -134,7 +135,7 @@ class _addproductState extends State<addproduct> {
                     //     borderRadius: BorderRadius.circular(8)),
                     icon: Icon(Icons.fastfood),
                     iconColor: Colors.orange,
-                    labelText: 'Item Name',
+                    labelText: 'iname'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -157,7 +158,7 @@ class _addproductState extends State<addproduct> {
                     //     borderRadius: BorderRadius.circular(8)),
                     icon: Icon(Icons.description),
                     iconColor: Colors.orange,
-                    labelText: 'Description',
+                    labelText: 'des'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -180,7 +181,7 @@ class _addproductState extends State<addproduct> {
                     //     borderRadius: BorderRadius.circular(8)),
                     icon: Icon(Icons.event_available_rounded),
                     iconColor: Colors.orange,
-                    labelText: 'Availablity',
+                    labelText: 'avail'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -203,7 +204,7 @@ class _addproductState extends State<addproduct> {
                     //     borderRadius: BorderRadius.circular(8)),
                     icon: Icon(Icons.price_change),
                     iconColor: Colors.orange,
-                    labelText: 'Item Price',
+                    labelText: 'iprice'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -235,8 +236,8 @@ class _addproductState extends State<addproduct> {
                         children: [
                           Expanded(
                               child: _image == null
-                                  ? const Center(
-                                      child: Text("Select the item image"),
+                                  ? Center(
+                                      child: Text('img_txt'.tr),
                                     )
                                   : Image.file(_image!))
                         ],
@@ -268,7 +269,7 @@ class _addproductState extends State<addproduct> {
                   },
                   style: ElevatedButton.styleFrom(primary: Colors.grey),
                   child: Text(
-                    "Add Image",
+                    'img'.tr,
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.white,
@@ -302,7 +303,7 @@ class _addproductState extends State<addproduct> {
                 ),
 
                 // elevated button
-                customButton("Added", () => sendUserDataToDB()),
+                customButton('add'.tr, () => sendUserDataToDB()),
               ],
             ),
           ),

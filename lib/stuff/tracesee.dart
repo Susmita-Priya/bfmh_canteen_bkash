@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class tracesee extends StatefulWidget {
   const tracesee({super.key});
@@ -46,17 +47,20 @@ class _traceseeState extends State<tracesee> {
                           //fit: BoxFit.cover,
 
                           title: Text(
-                            "Order ID: ${_documentSnapshot['order_id']}",
+                            'orderid'.tr +
+                                " : ${_documentSnapshot['order_id']}",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.orange,
                                 fontSize: 19.h),
                           ),
                           subtitle: Text(
-                            "${_documentSnapshot['email']}"
-                            "\n(${_documentSnapshot['item']})"
-                            "\n${_documentSnapshot['total']} TK"
-                            "\n\nStatus : ${_documentSnapshot['status']}",
+                            // "${_documentSnapshot['email']}"
+                            "(${_documentSnapshot['item']})"
+                                    // "\n${_documentSnapshot['total']} TK"
+                                    "\n\n" +
+                                'status'.tr +
+                                " : ${_documentSnapshot['status']}",
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -115,8 +119,8 @@ class _traceseeState extends State<tracesee> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Order Status",
+        title: Text(
+          'orderst'.tr,
           style: TextStyle(
             //fontSize: 35,
             fontWeight: FontWeight.bold,

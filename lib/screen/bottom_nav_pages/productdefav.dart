@@ -8,6 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class productdefav extends StatefulWidget {
   var _product;
@@ -211,7 +212,7 @@ class _productdefavState extends State<productdefav> {
               child: ElevatedButton(
                 onPressed: () => addToCart(),
                 child: Text(
-                  "Add to cart",
+                  'addcart'.tr,
                   style: TextStyle(color: Colors.white, fontSize: 18.sp),
                 ),
                 style: ElevatedButton.styleFrom(

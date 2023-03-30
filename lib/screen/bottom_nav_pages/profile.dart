@@ -3,6 +3,7 @@ import 'package:bfmh_canteen/screen/feedbacesee.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -110,7 +111,7 @@ class _ProfileState extends State<Profile> {
                               infoChild(
                                 _width,
                                 Icons.email,
-                                "Email: " + data['email'],
+                                'email'.tr + " : " + data['email'],
                               ),
                               const SizedBox(
                                 height: 12,
@@ -118,23 +119,23 @@ class _ProfileState extends State<Profile> {
                               infoChild(
                                 _width,
                                 Icons.phone,
-                                "Phone: " + data['phone'],
+                                'phn'.tr + " : " + data['phone'],
                               ),
                               const SizedBox(
                                 height: 12,
                               ),
                               infoChild(_width, Icons.calendar_month,
-                                  "Date of birth: " + data['dob']),
+                                  'dob'.tr + " : " + data['dob']),
                               const SizedBox(
                                 height: 12,
                               ),
                               infoChild(_width, Icons.lock_clock,
-                                  "Age: " + data['age']),
+                                  'age'.tr + " : " + data['age']),
                               const SizedBox(
                                 height: 12,
                               ),
                               infoChild(_width, Icons.woman,
-                                  "Gender: " + data['gender']),
+                                  'gender'.tr + " : " + data['gender']),
                               const SizedBox(
                                 height: 15,
                               ),
@@ -166,7 +167,7 @@ class _ProfileState extends State<Profile> {
                                           ),
                                         );
                                       },
-                                      child: Text('Update',
+                                      child: Text('update'.tr,
                                           style: TextStyle(
                                               fontSize: 15.0,
                                               color: Colors.white,

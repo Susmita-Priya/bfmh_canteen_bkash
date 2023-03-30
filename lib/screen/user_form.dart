@@ -12,6 +12,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class userform extends StatefulWidget {
@@ -125,14 +126,14 @@ class _userformState extends State<userform> {
                   height: 20.h,
                 ),
                 Text(
-                  "Submit the form to continue.",
+                  'submithead'.tr,
                   style: TextStyle(
                       fontSize: 25.sp,
                       color: Appcolours.Orange,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  "We will not share your information with anyone.",
+                  'submitsubhead'.tr,
                   style: TextStyle(
                     fontSize: 14.sp,
                     //color: Color(0xFFBBBBBB),
@@ -150,7 +151,7 @@ class _userformState extends State<userform> {
                   decoration: InputDecoration(
                     icon: Icon(Icons.account_circle),
                     iconColor: Colors.orange,
-                    labelText: 'Name',
+                    labelText: 'name'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -173,7 +174,7 @@ class _userformState extends State<userform> {
                   decoration: InputDecoration(
                     icon: Icon(Icons.email),
                     iconColor: Colors.orange,
-                    labelText: 'Email',
+                    labelText: 'email'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -194,7 +195,7 @@ class _userformState extends State<userform> {
                   decoration: InputDecoration(
                     icon: Icon(Icons.phone),
                     iconColor: Colors.orange,
-                    labelText: 'Phone',
+                    labelText: 'phn'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -215,7 +216,7 @@ class _userformState extends State<userform> {
                   decoration: InputDecoration(
                     icon: Icon(Icons.baby_changing_station_sharp),
                     iconColor: Colors.orange,
-                    labelText: 'Date of birth',
+                    labelText: 'dob'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -245,7 +246,7 @@ class _userformState extends State<userform> {
                       fontSize: 14.sp,
                       color: Colors.grey,
                     ),
-                    labelText: 'Gender',
+                    labelText: 'gender'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -275,7 +276,7 @@ class _userformState extends State<userform> {
                   decoration: InputDecoration(
                     icon: Icon(Icons.lock_clock),
                     iconColor: Colors.orange,
-                    labelText: 'Age',
+                    labelText: 'age'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -302,8 +303,8 @@ class _userformState extends State<userform> {
                         children: [
                           Expanded(
                               child: _image == null
-                                  ? const Center(
-                                      child: Text("Select the item image"),
+                                  ? Center(
+                                      child: Text('img_txt'.tr),
                                     )
                                   : Image.file(_image!))
                         ],
@@ -335,7 +336,7 @@ class _userformState extends State<userform> {
                   },
                   style: ElevatedButton.styleFrom(primary: Colors.grey),
                   child: Text(
-                    "Add Image",
+                    'img'.tr,
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.white,
@@ -351,7 +352,7 @@ class _userformState extends State<userform> {
                 ),
 
                 // elevated button
-                customButton("Continue", () => sendUserDataToDB()),
+                customButton('submit'.tr, () => sendUserDataToDB()),
               ],
             ),
           ),

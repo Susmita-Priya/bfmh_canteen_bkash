@@ -1,7 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class tracef extends StatefulWidget {
@@ -37,7 +40,7 @@ class _traceState extends State<tracef> {
       child: Stack(
         children: <Widget>[
           Scaffold(
-            appBar: AppBar(title: Text("Trace order")),
+            appBar: AppBar(title: Text('trace'.tr)),
             //backgroundColor: Colors.white30,
             body: Container(
               child: Stack(
@@ -133,7 +136,8 @@ class _traceState extends State<tracef> {
                               ]),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(top: _height / 20),
+                          padding: EdgeInsets.only(
+                              top: _height / 20, left: _height / 15),
                           child: Column(
                             children: <Widget>[
                               const SizedBox(
@@ -141,26 +145,30 @@ class _traceState extends State<tracef> {
                               ),
                               infoChild(
                                 _width,
-                                Icons.fastfood,
-                                "Order id :  " +
+                                CupertinoIcons.number_circle_fill,
+                                'orderid'.tr +
+                                    " :  " +
                                     widget.documentSnapshot['order_id'],
                               ),
                               const SizedBox(
                                 height: 12,
                               ),
-                              infoChild(
-                                _width,
-                                Icons.fastfood, 
-                                "Items :  " + widget.documentSnapshot['item'],
-                              ),
-                              const SizedBox(
-                                height: 12,  
-                              ),
+                              // infoChild(
+                              //   _width,
+                              //   Icons.fastfood_rounded,
+                              //   "Items :  " + widget.documentSnapshot['item'],
+
+                              // ),
+                              // const SizedBox(
+                              //   height: 12,
+                              // ),
                               infoChild(
                                 _width,
                                 Icons.paid,
-                                "Total Price : " +
-                                    widget.documentSnapshot['total'],
+                                'totalprice'.tr +
+                                    " : " +
+                                    widget.documentSnapshot['total'] +
+                                    'tk'.tr,
                               ),
                               const SizedBox(
                                 height: 12,
@@ -168,7 +176,8 @@ class _traceState extends State<tracef> {
                               infoChild(
                                   _width,
                                   Icons.restaurant_menu,
-                                  "Status : " +
+                                  'status'.tr +
+                                      " : " +
                                       widget.documentSnapshot['status']),
                               const SizedBox(
                                 height: 12,

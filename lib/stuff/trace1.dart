@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:bfmh_canteen/stuff/oderlist.dart';
 import 'package:bfmh_canteen/stuff/tracesee.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:bfmh_canteen/constant/Appcolours.dart';
 import 'package:bfmh_canteen/stuff/editfood.dart';
@@ -245,7 +246,7 @@ class _trace1State extends State<trace1> {
                   height: 20.h,
                 ),
                 Text(
-                  "Add Order Status",
+                  'aorderst'.tr,
                   style: TextStyle(
                       fontSize: 25.sp,
                       color: Colors.orange,
@@ -309,9 +310,9 @@ class _trace1State extends State<trace1> {
                   decoration: InputDecoration(
                     // border: OutlineInputBorder(
                     //     borderRadius: BorderRadius.circular(8)),
-                    icon: Icon(Icons.add_shopping_cart),
+                    icon: Icon(CupertinoIcons.number_circle_fill),
                     iconColor: Colors.orange,
-                    labelText: 'Order id',
+                    labelText: 'orderid'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -338,7 +339,7 @@ class _trace1State extends State<trace1> {
                     //     borderRadius: BorderRadius.circular(8)),
                     icon: Icon(Icons.email),
                     iconColor: Colors.orange,
-                    labelText: 'Email',
+                    labelText: 'email'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -363,7 +364,7 @@ class _trace1State extends State<trace1> {
                     //     borderRadius: BorderRadius.circular(8)),
                     icon: Icon(Icons.fastfood),
                     iconColor: Colors.orange,
-                    labelText: 'Food items',
+                    labelText: 'iname'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -386,9 +387,9 @@ class _trace1State extends State<trace1> {
                   decoration: InputDecoration(
                     // border: OutlineInputBorder(
                     //     borderRadius: BorderRadius.circular(8)),
-                    icon: Icon(Icons.price_change_outlined),
+                    icon: Icon(Icons.paid),
                     iconColor: Colors.orange,
-                    labelText: 'Total Price',
+                    labelText: 'totalprice'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -414,7 +415,7 @@ class _trace1State extends State<trace1> {
                       fontSize: 14.sp,
                       color: Colors.grey,
                     ),
-                    labelText: 'Status',
+                    labelText: 'status'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -464,7 +465,7 @@ class _trace1State extends State<trace1> {
                       }
                     },
                     child: Text(
-                      "Send Notification",
+                      'noti'.tr,
                       style: TextStyle(color: Colors.white, fontSize: 18.sp),
                     ),
                     style: ElevatedButton.styleFrom(
@@ -501,7 +502,7 @@ class _trace1State extends State<trace1> {
                   height: 30.h,
                 ),
                 // elevated button
-                customButton("Update", () => addData()),
+                customButton('update'.tr, () => addData()),
               ],
             ),
           ),

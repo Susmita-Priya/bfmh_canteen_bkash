@@ -15,11 +15,13 @@ import 'package:bfmh_canteen/stuff/home.dart';
 import 'package:bfmh_canteen/stuff/loginstaff.dart';
 import 'package:bfmh_canteen/stuff/notifications.dart';
 import 'package:bfmh_canteen/stuff/oderlist.dart';
+import 'package:bfmh_canteen/stuff/qr.dart';
 import 'package:bfmh_canteen/stuff/tracesee.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
@@ -45,7 +47,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   color: Colors.orange,
                 ),
                 margin: EdgeInsets.all(0),
-                accountName: Text("BFMH Canteen ",
+                accountName: Text('app_name'.tr,
                     style: const TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w500,
@@ -76,7 +78,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   );
                 },
                 child: Text(
-                  "Home",
+                  'home'.tr,
                   textScaleFactor: 1.2,
                   style: TextStyle(
                     color: Colors.black,
@@ -87,7 +89,7 @@ class _MyDrawerState extends State<MyDrawer> {
             Divider(indent: 18, endIndent: 16),
             ListTile(
               leading: Icon(
-                Icons.fastfood_rounded,
+                Icons.fastfood_sharp,
                 color: Colors.black,
               ),
               title: GestureDetector(
@@ -100,7 +102,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   );
                 },
                 child: Text(
-                  "Add Food",
+                  'addfood'.tr,
                   textScaleFactor: 1.2,
                   style: TextStyle(
                     color: Colors.black,
@@ -124,7 +126,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   );
                 },
                 child: Text(
-                  "Edit Food ",
+                  'editfood'.tr,
                   textScaleFactor: 1.2,
                   style: TextStyle(
                     color: Colors.black,
@@ -133,30 +135,7 @@ class _MyDrawerState extends State<MyDrawer> {
               ),
             ),
             Divider(indent: 15, endIndent: 15),
-            ListTile(
-              leading: Icon(
-                CupertinoIcons.list_number,
-                color: Colors.black,
-              ),
-              title: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const feedback(),
-                    ),
-                  );
-                },
-                child: Text(
-                  "FeedBack List",
-                  textScaleFactor: 1.2,
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ),
-            Divider(indent: 16, endIndent: 16),
+
             ListTile(
               leading: Icon(
                 CupertinoIcons.cart_fill,
@@ -172,7 +151,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   );
                 },
                 child: Text(
-                  "Confirm Order",
+                  'conorder'.tr,
                   textScaleFactor: 1.2,
                   style: TextStyle(
                     color: Colors.black,
@@ -220,7 +199,55 @@ class _MyDrawerState extends State<MyDrawer> {
                   );
                 },
                 child: Text(
-                  "Order Status",
+                  'orderst'.tr,
+                  textScaleFactor: 1.2,
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            Divider(indent: 16, endIndent: 16),
+            ListTile(
+              leading: Icon(
+                Icons.qr_code_scanner_rounded,
+                color: Colors.black,
+              ),
+              title: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QRViewExample(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'qrscan'.tr,
+                  textScaleFactor: 1.2,
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            Divider(indent: 16, endIndent: 16),
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.f_cursive_circle_fill,
+                color: Colors.black,
+              ),
+              title: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const feedback(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'feedlst'.tr,
                   textScaleFactor: 1.2,
                   style: TextStyle(
                     color: Colors.black,
@@ -244,7 +271,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   );
                 },
                 child: Text(
-                  "About",
+                  'aboutt'.tr,
                   textScaleFactor: 1.2,
                   style: TextStyle(
                     color: Colors.black,
@@ -254,7 +281,7 @@ class _MyDrawerState extends State<MyDrawer> {
             ),
             Divider(indent: 16, endIndent: 16),
             SizedBox(
-              height: 100,
+              height: 25,
             ),
             ListTile(
               // leading: const Icon(
@@ -268,8 +295,8 @@ class _MyDrawerState extends State<MyDrawer> {
                     logout(context);
                   },
                   padding: EdgeInsets.all(20),
-                  child: const Text(
-                    "Logout",
+                  child: Text(
+                    'logout'.tr,
 
                     //textAlign: TextAlign.center,
                     style: TextStyle(

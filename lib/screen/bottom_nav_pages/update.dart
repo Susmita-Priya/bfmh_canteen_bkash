@@ -10,6 +10,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 import 'package:bfmh_canteen/stuff/home.dart';
@@ -88,7 +89,7 @@ class _updateState extends State<update> {
                   height: 20.h,
                 ),
                 Text(
-                  "Update information",
+                  'uptitle'.tr,
                   style: TextStyle(
                       fontSize: 25.sp,
                       color: Colors.orange,
@@ -155,7 +156,7 @@ class _updateState extends State<update> {
                   decoration: InputDecoration(
                     icon: Icon(Icons.account_circle),
                     iconColor: Colors.orange,
-                    labelText: 'Name',
+                    labelText: 'name'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -180,7 +181,7 @@ class _updateState extends State<update> {
                   decoration: InputDecoration(
                     icon: Icon(Icons.email),
                     iconColor: Colors.orange,
-                    labelText: 'Email',
+                    labelText: 'email'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -202,7 +203,7 @@ class _updateState extends State<update> {
                   decoration: InputDecoration(
                     icon: Icon(Icons.phone),
                     iconColor: Colors.orange,
-                    labelText: 'Phone',
+                    labelText: 'phn'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -224,7 +225,7 @@ class _updateState extends State<update> {
                   decoration: InputDecoration(
                     icon: Icon(Icons.baby_changing_station_sharp),
                     iconColor: Colors.orange,
-                    labelText: 'Date of birth',
+                    labelText: 'dob'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -251,7 +252,7 @@ class _updateState extends State<update> {
                     //   fontSize: 14.sp,
                     //   color: Colors.grey,
                     // ),
-                    labelText: 'Gender',
+                    labelText: 'gender'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -268,7 +269,7 @@ class _updateState extends State<update> {
                   decoration: InputDecoration(
                     icon: Icon(Icons.lock_clock),
                     iconColor: Colors.orange,
-                    labelText: 'Age',
+                    labelText: 'age'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Appcolours.Orange,
@@ -327,7 +328,7 @@ class _updateState extends State<update> {
                   },
                   style: ElevatedButton.styleFrom(primary: Colors.grey),
                   child: Text(
-                    "update Image",
+                    'upimg'.tr,
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.white,
@@ -400,7 +401,7 @@ class _updateState extends State<update> {
                 ),
 
                 // elevated button
-                customButton("Added", () => updateData()),
+                customButton('update'.tr, () => updateData()),
               ],
             ),
           ),

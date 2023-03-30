@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class signupscreen extends StatefulWidget {
   const signupscreen({super.key});
@@ -76,7 +77,7 @@ class _signupscreenState extends State<signupscreen> {
                       ),
                     ),
                     Text(
-                      "Sign Up",
+                      'signup'.tr,
                       style: TextStyle(fontSize: 22.sp, color: Colors.white),
                     ),
                   ],
@@ -104,7 +105,7 @@ class _signupscreenState extends State<signupscreen> {
                           height: 20.h,
                         ),
                         Text(
-                          "Create an account",
+                          'create'.tr,
                           style: TextStyle(
                               fontSize: 22.sp, color: Appcolours.Orange),
                         ),
@@ -146,7 +147,7 @@ class _signupscreenState extends State<signupscreen> {
                                     fontSize: 14.sp,
                                     color: Colors.grey,
                                   ),
-                                  labelText: 'EMAIL',
+                                  labelText: 'email'.tr,
                                   labelStyle: TextStyle(
                                     fontSize: 15.sp,
                                     color: Appcolours.Orange,
@@ -188,7 +189,7 @@ class _signupscreenState extends State<signupscreen> {
                                     fontSize: 14.sp,
                                     color: Colors.grey,
                                   ),
-                                  labelText: 'PASSWORD',
+                                  labelText: 'password'.tr,
                                   labelStyle: TextStyle(
                                     fontSize: 15.sp,
                                     color: Appcolours.Orange,
@@ -232,7 +233,7 @@ class _signupscreenState extends State<signupscreen> {
                               signUp();
                             },
                             child: Text(
-                              "Continue",
+                              'continue'.tr,
                               style: TextStyle(
                                   color: Colors.white, fontSize: 18.sp),
                             ),
@@ -248,7 +249,7 @@ class _signupscreenState extends State<signupscreen> {
                         Wrap(
                           children: [
                             Text(
-                              "Already an account?",
+                              'already'.tr,
                               style: TextStyle(
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w600,
@@ -257,7 +258,7 @@ class _signupscreenState extends State<signupscreen> {
                             ),
                             GestureDetector(
                               child: Text(
-                                " Sign In",
+                                'signin'.tr,
                                 style: TextStyle(
                                   fontSize: 13.sp,
                                   fontWeight: FontWeight.w600,

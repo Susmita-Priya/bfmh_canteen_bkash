@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class order extends StatefulWidget {
   const order({super.key});
@@ -47,20 +48,18 @@ class _orderState extends State<order> {
                           //fit: BoxFit.cover,
 
                           title: Text(
-                            "ID: ${_documentSnapshot['order_id']}",
+                            'orderid'.tr + ": ${_documentSnapshot['order_id']}",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.orange,
                                 fontSize: 16.h),
                           ),
                           subtitle: Text(
-                            "\n" +
-                                _documentSnapshot['email'] +
-                                "\n"
-                                    "(" +
-                                _documentSnapshot['item_name'] +
-                                ")" +
-                                "\nTotal = ${_documentSnapshot['total'].toString()} TK",
+                            // "\n" +
+                            //     _documentSnapshot['email'] +
+                            // "\n"
+                            "(" + _documentSnapshot['item_name'] + ")", //+
+                            // "\nTotal = ${_documentSnapshot['total'].toString()} TK",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
@@ -104,8 +103,8 @@ class _orderState extends State<order> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "OrderList",
+        title: Text(
+          'myorder'.tr,
           style: TextStyle(
             //fontSize: 35,
             fontWeight: FontWeight.bold,

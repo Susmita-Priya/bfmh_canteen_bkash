@@ -11,6 +11,7 @@ import 'package:bfmh_canteen/screen/bottom_nav_pages/update.dart';
 import 'package:bfmh_canteen/screen/search_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class bottomnavcontroller extends StatefulWidget {
   const bottomnavcontroller({super.key});
@@ -32,7 +33,7 @@ class _bottomnavcontrollerState extends State<bottomnavcontroller> {
         backgroundColor: Colors.orange,
         elevation: 0,
         title: Text(
-          "BFMH",
+          'app_name'.tr,
           style: TextStyle(color: Colors.black),
         ),
         actions: [
@@ -88,17 +89,17 @@ class _bottomnavcontrollerState extends State<bottomnavcontroller> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: "Home",
+            label: 'home'.tr,
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_outline), label: "Favourite"),
+              icon: Icon(Icons.favorite_outline), label: 'fav'.tr),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
-            label: "Cart",
+            label: 'cart'.tr,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.fastfood),
-            label: "Trace food",
+            label: 'trace'.tr,
           ),
         ],
         onTap: (index) {

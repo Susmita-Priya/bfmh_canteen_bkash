@@ -1,5 +1,6 @@
 import 'package:bfmh_canteen/screen/bottom_nav_controller.dart';
 import 'package:bfmh_canteen/screen/bottom_nav_pages/QRcode.dart';
+import 'package:bfmh_canteen/screen/bottom_nav_pages/home.dart';
 import 'package:bfmh_canteen/screen/bottom_nav_pages/payment.dart';
 import 'package:bfmh_canteen/utils/style.dart';
 import 'package:bfmh_canteen/widgets/custombutton.dart';
@@ -16,6 +17,7 @@ import 'dart:developer' as dev;
 import 'package:flutter/material.dart';
 import 'package:flutter_bkash/flutter_bkash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class bkash extends StatefulWidget {
   num? total;
@@ -51,7 +53,7 @@ class _bkashState extends State<bkash> {
     final _width = MediaQuery.of(context).size.width;
     return Scaffold(
       key: _scaffoldKey,
-      appBar: AppBar(title: Text("Payment")),
+      appBar: AppBar(title: Text('payment'.tr)),
       body: SingleChildScrollView(
         //padding: const EdgeInsets.fromLTRB(40, 40, 0, 40),
         child: Column(
@@ -61,7 +63,7 @@ class _bkashState extends State<bkash> {
               child: Padding(
                 padding: EdgeInsets.only(top: _height / 05),
                 child: Text(
-                  "Pay first for confirm your order",
+                  'paymenttitle'.tr,
                   style: TextStyle(
                       color: Colors.orange,
                       fontSize: 25,
@@ -84,7 +86,7 @@ class _bkashState extends State<bkash> {
                       infoChild(
                         _width,
                         Icons.paid,
-                        "Amount :  " + "$total" + " TK",
+                        'amount'.tr + " :  " + "$total" + " TK",
                       ),
                       const SizedBox(
                         height: 12,
@@ -92,7 +94,7 @@ class _bkashState extends State<bkash> {
                       infoChild(
                         _width,
                         Icons.price_change_rounded,
-                        "Vat :  0.0 TK",
+                        'vat'.tr + " :  0.0 TK",
                       ),
                       const SizedBox(
                         height: 12,
@@ -100,7 +102,7 @@ class _bkashState extends State<bkash> {
                       infoChild(
                         _width,
                         Icons.add_circle,
-                        "Extra charge : 0.0 TK",
+                        'extra'.tr + " : 0.0 TK",
                       ),
                       const SizedBox(
                         height: 12,
@@ -111,7 +113,7 @@ class _bkashState extends State<bkash> {
                       ),
 
                       infoChild(_width, Icons.price_check_rounded,
-                          "Total : " + "$total" + " TK"),
+                          'total'.tr + " : " + "$total" + " TK"),
                       const SizedBox(
                         height: 22,
                       ),
@@ -154,13 +156,11 @@ class _bkashState extends State<bkash> {
                       borderRadius: BorderRadius.circular(3.0),
                     ),
                     backgroundColor: Colors.orange),
-                child: const Text(
-                  "Payment",
+                child: Text(
+                  'payment'.tr,
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () {
-                  sendUserDataToDB();
-                  deletee();
                   // String amount = _amountController.text.trim();
                   String amount = total.toString();
                   String intent = "authorization";
@@ -245,9 +245,15 @@ class _bkashState extends State<bkash> {
                                 }
                               }
                               // back to screen to pop()
-                              Navigator.of(context).pop();
+                              //Navigator.of(context).pop();
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => bottomnavcontroller()));
                             },
                           )));
+                  sendUserDataToDB();
+                  deletee();
                 },
               ),
             )

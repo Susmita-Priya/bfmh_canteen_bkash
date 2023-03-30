@@ -3,6 +3,7 @@ import 'package:bfmh_canteen/widgets/fetchfavt.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Favourite extends StatefulWidget {
   @override
@@ -14,8 +15,8 @@ class _FavouriteState extends State<Favourite> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Wishlist",
+        title: Text(
+          'wishlist'.tr,
           style: TextStyle(
               fontSize: 35,
               fontWeight: FontWeight.bold,

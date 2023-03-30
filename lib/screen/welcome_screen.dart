@@ -3,6 +3,7 @@ import 'package:bfmh_canteen/screen/registration_screen.dart';
 import 'package:bfmh_canteen/stuff/loginstaff.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,17 +26,68 @@ class _welcomescreenState extends State<welcomescreen> {
                   image: AssetImage('assets/dash2.jpg'), fit: BoxFit.cover),
             ),
           ),
+          Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Expanded(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 50, left: 220),
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        Get.updateLocale(Locale('bn', 'BD'));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(35),
+                          ),
+                          side: BorderSide(color: Colors.orange)),
+                      child: Text(
+                        'Ban',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Get.updateLocale(Locale('en', 'US'));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(35),
+                          ),
+                          side: BorderSide(color: Colors.orange)),
+                      child: Text(
+                        'Eng',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ]),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 flex: 8,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 170, left: 40),
+                  padding: const EdgeInsets.only(top: 170, left: 60),
                   child: Column(
                     children: [
                       Text(
-                        'BFMH Canteen',
+                        'app_name'.tr,
+                        //"JnU Canteen",
                         style: TextStyle(
                             fontSize: 45,
                             fontWeight: FontWeight.bold,
@@ -49,7 +101,7 @@ class _welcomescreenState extends State<welcomescreen> {
                             ]),
                       ),
                       Text(
-                        ' Jagannath University',
+                        'app_title'.tr,
                         style: TextStyle(
                             fontSize: 18,
                             color: Colors.grey[200],
@@ -84,6 +136,56 @@ class _welcomescreenState extends State<welcomescreen> {
                       ),
                     ),
                     // ),
+                    // Container(
+                    //   height: 80,
+                    //   width: double.infinity,
+                    //   padding: const EdgeInsets.only(
+                    //       top: 8, left: 44, right: 44, bottom: 10),
+                    //   child: ElevatedButton(
+                    //     onPressed: () {
+                    //       Get.updateLocale(Locale('en', 'US'));
+                    //     },
+                    //     style: ElevatedButton.styleFrom(
+                    //         elevation: 0,
+                    //         shape: RoundedRectangleBorder(
+                    //           borderRadius: BorderRadius.circular(35),
+                    //         ),
+                    //         side: BorderSide(color: Colors.orange)),
+                    //     child: Text(
+                    //       'english',
+                    //       style: TextStyle(
+                    //         fontSize: 20,
+                    //         fontWeight: FontWeight.bold,
+                    //         color: Colors.white,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // Container(
+                    //   height: 80,
+                    //   width: double.infinity,
+                    //   padding: const EdgeInsets.only(
+                    //       top: 8, left: 44, right: 44, bottom: 10),
+                    //   child: ElevatedButton(
+                    //     onPressed: () {
+                    //       Get.updateLocale(Locale('bn', 'BD'));
+                    //     },
+                    //     style: ElevatedButton.styleFrom(
+                    //         elevation: 0,
+                    //         shape: RoundedRectangleBorder(
+                    //           borderRadius: BorderRadius.circular(35),
+                    //         ),
+                    //         side: BorderSide(color: Colors.orange)),
+                    //     child: Text(
+                    //       'bangla',
+                    //       style: TextStyle(
+                    //         fontSize: 20,
+                    //         fontWeight: FontWeight.bold,
+                    //         color: Colors.white,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                     Container(
                       height: 80,
                       width: double.infinity,
@@ -103,7 +205,7 @@ class _welcomescreenState extends State<welcomescreen> {
                             ),
                             side: BorderSide(color: Colors.orange)),
                         child: Text(
-                          'Student',
+                          'student'.tr,
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -131,7 +233,7 @@ class _welcomescreenState extends State<welcomescreen> {
                             ),
                             side: BorderSide(color: Colors.orange)),
                         child: Text(
-                          'Canteen',
+                          'canteen'.tr,
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,

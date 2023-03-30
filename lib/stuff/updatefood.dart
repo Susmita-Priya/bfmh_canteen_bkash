@@ -8,6 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 import 'package:bfmh_canteen/stuff/home.dart';
@@ -83,7 +84,7 @@ class _updatefoodState extends State<updatefood> {
                   height: 20.h,
                 ),
                 Text(
-                  "Update food item",
+                  'uftitle'.tr,
                   style: TextStyle(
                       fontSize: 25.sp,
                       color: Colors.orange,
@@ -152,7 +153,7 @@ class _updatefoodState extends State<updatefood> {
                     //     borderRadius: BorderRadius.circular(8)),
                     icon: Icon(Icons.fastfood),
                     iconColor: Colors.orange,
-                    labelText: 'Item Name',
+                    labelText: 'iname'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -176,7 +177,7 @@ class _updatefoodState extends State<updatefood> {
                     //     borderRadius: BorderRadius.circular(8)),
                     icon: Icon(Icons.description),
                     iconColor: Colors.orange,
-                    labelText: 'Description',
+                    labelText: 'des'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -200,7 +201,7 @@ class _updatefoodState extends State<updatefood> {
                     //     borderRadius: BorderRadius.circular(8)),
                     icon: Icon(Icons.event_available_rounded),
                     iconColor: Colors.orange,
-                    labelText: 'Availablity',
+                    labelText: 'avail'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -225,7 +226,7 @@ class _updatefoodState extends State<updatefood> {
                     //     borderRadius: BorderRadius.circular(8)),
                     icon: Icon(Icons.price_change),
                     iconColor: Colors.orange,
-                    labelText: 'Item Price',
+                    labelText: 'iprice'.tr,
                     labelStyle: TextStyle(
                       fontSize: 20.sp,
                       color: Colors.orange,
@@ -357,7 +358,7 @@ class _updatefoodState extends State<updatefood> {
                 ),
 
                 // elevated button
-                customButton("Update", () => updateData()),
+                customButton('update'.tr, () => updateData()),
               ],
             ),
           ),

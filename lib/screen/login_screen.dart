@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class loginscreen extends StatefulWidget {
   const loginscreen({super.key});
@@ -76,9 +77,22 @@ class _loginscreenState extends State<loginscreen> {
                       ),
                     ),
                     Text(
-                      "Sign In",
+                      'signin'.tr,
                       style: TextStyle(fontSize: 22.sp, color: Colors.white),
                     ),
+                    // ElevatedButton(
+                    //   onPressed: () {
+                    //     Get.updateLocale(Locale('bn', 'BD'));
+                    //   },
+                    //   child: Text(
+                    //     'english',
+                    //     style: TextStyle(
+                    //       fontSize: 20,
+                    //       fontWeight: FontWeight.bold,
+                    //       color: Colors.white,
+                    //     ),
+                    //   ),
+                    // )
                   ],
                 ),
               ),
@@ -104,7 +118,7 @@ class _loginscreenState extends State<loginscreen> {
                           height: 20.h,
                         ),
                         Text(
-                          "Welcome!",
+                          'welcome'.tr,
                           style: TextStyle(
                               fontSize: 22.sp, color: Appcolours.Orange),
                         ),
@@ -146,7 +160,7 @@ class _loginscreenState extends State<loginscreen> {
                                     fontSize: 14.sp,
                                     color: Colors.grey,
                                   ),
-                                  labelText: 'EMAIL',
+                                  labelText: 'email'.tr,
                                   labelStyle: TextStyle(
                                     fontSize: 15.sp,
                                     color: Appcolours.Orange,
@@ -188,7 +202,7 @@ class _loginscreenState extends State<loginscreen> {
                                     fontSize: 14.sp,
                                     color: Colors.grey,
                                   ),
-                                  labelText: 'PASSWORD',
+                                  labelText: 'password'.tr,
                                   labelStyle: TextStyle(
                                     fontSize: 15.sp,
                                     color: Appcolours.Orange,
@@ -225,7 +239,7 @@ class _loginscreenState extends State<loginscreen> {
                         ),
                         // elevated button
                         customButton(
-                          "Sign In",
+                          'signin'.tr,
                           () {
                             signIn();
                           },
@@ -236,7 +250,7 @@ class _loginscreenState extends State<loginscreen> {
                         Wrap(
                           children: [
                             Text(
-                              "Don't have an account?",
+                              'havnt_ac'.tr,
                               style: TextStyle(
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w600,
@@ -245,7 +259,7 @@ class _loginscreenState extends State<loginscreen> {
                             ),
                             GestureDetector(
                               child: Text(
-                                " Sign Up",
+                                'signup'.tr,
                                 style: TextStyle(
                                   fontSize: 13.sp,
                                   fontWeight: FontWeight.w600,
